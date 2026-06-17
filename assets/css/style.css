@@ -201,3 +201,8 @@ footer {
     background-color: var(--sand-beige);
     border-top: 1px solid rgba(138, 111, 85, 0.15);
 }
+
+.governance-section {
+    background-color: var(--warm-white);
+    border-top: 1px solid rgba(138, 111, 85, 0.15);
+}
