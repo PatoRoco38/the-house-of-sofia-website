@@ -211,3 +211,43 @@ footer {
     background-color: var(--sand-beige);
     border-top: 1px solid rgba(138, 111, 85, 0.15);
 }
+
+.access-section {
+    background-color: var(--warm-white);
+    border-top: 1px solid rgba(138, 111, 85, 0.15);
+}
+
+.contact-section {
+    background-color: var(--sand-beige);
+}
+
+.contact-quote {
+    border-left: 3px solid var(--gold);
+    padding-left: 1.5rem;
+    margin: 3rem 0;
+    font-size: 1.4rem;
+    line-height: 1.7;
+}
+
+.hero-button {
+    display: inline-block;
+    width: fit-content;
+
+    padding: 15px 30px;
+
+    background-color: var(--gold);
+    color: var(--warm-white);
+
+    text-decoration: none;
+    border: 1px solid var(--gold);
+
+    font-size: 0.95rem;
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.hero-button:hover {
+    background-color: transparent;
+    color: var(--gold);
+}
