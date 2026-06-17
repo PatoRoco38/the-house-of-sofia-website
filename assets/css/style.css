@@ -196,3 +196,8 @@ footer {
     padding-left: 28px;
     border-left: 2px solid var(--gold);
 }
+
+.method-section {
+    background-color: var(--sand-beige);
+    border-top: 1px solid rgba(138, 111, 85, 0.15);
+}
