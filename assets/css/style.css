@@ -519,3 +519,51 @@ html {
         padding: 70px 28px;
     }
 }
+.error-page {
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--sand-beige);
+
+    padding: 40px;
+}
+
+.error-container {
+
+    max-width: 700px;
+
+    text-align: center;
+}
+
+.error-container h1 {
+
+    font-size: 4.5rem;
+
+    margin: 20px 0;
+}
+
+.error-container p {
+
+    font-size: 1.2rem;
+
+    line-height: 1.8;
+
+    margin-bottom: 40px;
+}
+
+@media (max-width: 900px) {
+
+    .error-container h1 {
+
+        font-size: 3rem;
+    }
+
+    .error-container p {
+
+        font-size: 1rem;
+    }
+}
