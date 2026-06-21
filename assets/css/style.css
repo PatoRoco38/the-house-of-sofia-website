@@ -265,7 +265,7 @@ footer {
 }
 
 .site-footer {
-    padding: 96px 28px;
+    padding: 72px 28px;
     text-align: center;
     background-color: var(--amber);
     color: var(--warm-white);
@@ -330,18 +330,65 @@ footer {
 
 }
 
+.menu-toggle {
+    display: block;
+
+    background: transparent;
+    border: 1px solid rgba(138, 111, 85, 0.35);
+
+    color: var(--amber);
+
+    padding: 10px 16px;
+
+    font-family: inherit;
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+
 @media (max-width: 900px) {
 
     .site-header {
-        padding: 24px 28px;
-        flex-direction: column;
-        gap: 20px;
-        align-items: flex-start;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+
+        padding: 22px 28px;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .main-nav {
-        flex-wrap: wrap;
-        gap: 16px;
+        display: none !important;
+
+        position: static;
+
+        width: 100%;
+
+        padding: 24px 0 0;
+
+        background-color: transparent;
+
+        border-top: 1px solid rgba(138, 111, 85, 0.15);
+        border-bottom: 1px solid rgba(138, 111, 85, 0.15);
+
+        z-index: 999;
+    }
+
+    .main-nav.is-open {
+        display: flex !important;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .main-nav a {
+        display: block;
+        font-size: 0.85rem;
     }
 
     #hero {
