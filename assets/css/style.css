@@ -264,56 +264,132 @@ footer {
 
 }
 
+.site-footer {
+    padding: 96px 28px;
+    text-align: center;
+    background-color: var(--amber);
+    color: var(--warm-white);
+}
+
 .footer-brand {
-
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
-
 }
 
 .footer-motto {
-
-    font-size: 1rem;
-    letter-spacing: 2px;
-
+    font-size: 0.95rem;
+    letter-spacing: 0.18em;
     opacity: 0.85;
+    margin-bottom: 2.5rem;
+}
 
-    margin-bottom: 2rem;
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 2.5rem;
+}
 
+.footer-contact span {
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.75;
+}
+
+.footer-contact a {
+    color: var(--warm-white);
+    text-decoration: none;
+    font-size: 1.05rem;
+}
+
+.footer-contact a:hover {
+    opacity: 0.75;
 }
 
 .footer-links {
-
     display: flex;
-
     justify-content: center;
-
     gap: 2rem;
-
-    margin-bottom: 2rem;
-
+    margin-bottom: 2.5rem;
 }
 
 .footer-links a {
-
     color: var(--warm-white);
-
     text-decoration: none;
-
     transition: opacity 0.3s ease;
-
 }
 
 .footer-links a:hover {
-
     opacity: 0.7;
-
 }
 
 .footer-copyright {
+    font-size: 0.85rem;
+    opacity: 0.65;
 
-    font-size: 0.9rem;
+}
 
-    opacity: 0.7;
+@media (max-width: 900px) {
 
+    .site-header {
+        padding: 24px 28px;
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    #hero {
+        min-height: 75vh;
+        padding: 80px 28px;
+    }
+
+    #hero h2 {
+        font-size: 3rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    .content-section,
+    .negative-section {
+        min-height: auto;
+        padding: 80px 28px;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .content-section h2,
+    .negative-section h2 {
+        font-size: 2.6rem;
+    }
+
+    .section-content {
+        font-size: 1rem;
+    }
+
+    .negative-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .closing-statement,
+    .negative-closing,
+    .contact-quote {
+        font-size: 1.15rem;
+    }
+
+    .site-footer {
+        padding: 70px 28px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
 }
