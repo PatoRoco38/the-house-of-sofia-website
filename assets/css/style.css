@@ -29,6 +29,9 @@ header {
     justify-content: space-between;
     align-items: center;
 
+    max-width: 1400px;
+    margin: 0 auto;
+
     padding: 28px 60px;
 
     background-color: rgba(239, 233, 225, 0.94);
@@ -451,7 +454,7 @@ html {
 }
 
 .legal-hero {
-    padding: 140px 60px 90px;
+    padding: 120px 60px 70px;
     background-color: var(--warm-white);
     border-bottom: 1px solid rgba(138, 111, 85, 0.15);
 }
