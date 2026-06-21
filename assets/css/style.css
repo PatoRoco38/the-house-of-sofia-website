@@ -440,3 +440,8 @@ footer {
         gap: 1rem;
     }
 }
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
