@@ -34,3 +34,34 @@ function startSofiaAudio() {
     });
 
 }
+const audioToggle = document.getElementById('audio-toggle');
+const audioVolume = document.getElementById('audio-volume');
+
+let audioMuted = false;
+
+function setAllVolumes(value) {
+    sofiaAudio.siteLoop.volume = value;
+    sofiaAudio.threshold.volume = value;
+    sofiaAudio.institutionalBed.volume = value;
+    sofiaAudio.livingAesthetics.volume = value;
+    sofiaAudio.pulse.volume = Math.min(value + 0.15, 1);
+    sofiaAudio.concessionSeal.volume = value;
+}
+
+if (audioVolume) {
+    audioVolume.addEventListener('input', () => {
+        setAllVolumes(Number(audioVolume.value));
+    });
+}
+
+if (audioToggle) {
+    audioToggle.addEventListener('click', () => {
+        audioMuted = !audioMuted;
+
+        Object.values(sofiaAudio).forEach((audio) => {
+            audio.muted = audioMuted;
+        });
+
+        audioToggle.textContent = audioMuted ? 'Audio Off' : 'Audio On';
+    });
+}

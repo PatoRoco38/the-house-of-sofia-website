@@ -567,3 +567,36 @@ html {
         font-size: 1rem;
     }
 }
+.audio-control {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 2000;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 14px;
+
+    background-color: rgba(250, 248, 243, 0.92);
+    border: 1px solid rgba(138, 111, 85, 0.25);
+    backdrop-filter: blur(8px);
+}
+
+.audio-control button {
+    background: transparent;
+    border: none;
+    color: var(--amber);
+
+    font-family: inherit;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    cursor: pointer;
+}
+
+.audio-control input {
+    width: 90px;
+}
