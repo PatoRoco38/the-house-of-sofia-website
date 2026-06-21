@@ -65,3 +65,25 @@ if (audioToggle) {
         audioToggle.textContent = audioMuted ? 'Audio Off' : 'Audio On';
     });
 }
+function playSofiaPulse() {
+    const pulse = new Audio('assets/audio/05_SOFIA_PULSE.wav');
+
+    pulse.volume = 1;
+    pulse.muted = false;
+
+    pulse.play()
+        .then(() => console.log('Sofia Pulse tocou'))
+        .catch((error) => console.error('Erro ao tocar Sofia Pulse:', error));
+}
+
+document.addEventListener('click', (event) => {
+    const clickedButton = event.target.closest('.hero-button');
+
+    if (!clickedButton) return;
+
+    console.log('Clique em botão institucional detectado');
+
+    if (audioStarted && !audioMuted) {
+        playSofiaPulse();
+            }
+});
