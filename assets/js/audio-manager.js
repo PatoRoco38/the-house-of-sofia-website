@@ -87,3 +87,19 @@ document.addEventListener('click', (event) => {
         playSofiaPulse();
             }
 });
+function playSofiaConcessionSeal() {
+    sofiaAudio.siteLoop.pause();
+
+    const seal = new Audio("assets/audio/06_SOFIA_CONCESSION_SEAL.wav");
+
+    seal.volume = currentVolume;
+    seal.muted = audioMuted;
+
+    seal.play();
+
+    seal.addEventListener("ended", () => {
+        if (audioStarted && !audioMuted) {
+            sofiaAudio.siteLoop.play();
+        }
+    });
+}

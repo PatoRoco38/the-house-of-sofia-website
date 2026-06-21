@@ -18,3 +18,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const contactForm = document.getElementById("institutional-contact-form");
+    const formFeedback = document.getElementById("form-feedback");
+
+    if (!contactForm || !formFeedback) return;
+
+    contactForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        formFeedback.classList.add("is-visible");
+
+        contactForm.reset();
+
+        if (typeof playSofiaConcessionSeal === "function") {
+            playSofiaConcessionSeal();
+        }
+    });
+});
