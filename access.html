@@ -43,21 +43,37 @@
     </section>
 
     <section class="contact-form-section">
-        <form class="contact-form" id="class-s-access-form" action="https://formspree.io/f/xgojorby" method="POST">
+        <form
+            class="contact-form"
+            id="class-s-access-form"
+            action="https://formspree.io/f/xgojorby"
+            method="POST">
+
+            <input type="hidden" name="_subject" value="Class S Institutional Concession Inquiry">
+            <input type="text" name="_gotcha" class="spam-protection" tabindex="-1" autocomplete="off">
+
+            <div class="form-group full-width">
+                <p class="form-intro">
+                    This form is intended exclusively for Class S territorial concession inquiries for The House of Sofia®.
+                    The current concession access window is open only for New York, London, Paris and Tokyo.
+                    The access window opens on June 25, 2026 and closes on October 18, 2026.
+                    The first concession threshold begins at USD 18M.
+                </p>
+            </div>
 
             <div class="form-group">
                 <label for="full-name">Full Name *</label>
-                <input type="text" id="full-name" name="full-name" required>
+                <input type="text" id="full-name" name="full_name" required>
             </div>
 
             <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required>
+                <label for="institutional-role">Institutional Role / Position *</label>
+                <input type="text" id="institutional-role" name="institutional_role" required>
             </div>
 
             <div class="form-group">
-                <label for="phone">Phone / WhatsApp - Optional</label>
-                <input type="text" id="phone" name="phone">
+                <label for="organisation">Company / Family Office / Investment Group *</label>
+                <input type="text" id="organisation" name="organisation" required>
             </div>
 
             <div class="form-group">
@@ -66,39 +82,106 @@
             </div>
 
             <div class="form-group">
-                <label for="territory">Intended Territory *</label>
-                <input type="text" id="territory" name="territory" required>
+                <label for="territory">Class S Territory of Interest *</label>
+                <select id="territory" name="class_s_territory" required>
+                    <option value="">Select a territory</option>
+                    <option value="New York">New York</option>
+                    <option value="London">London</option>
+                    <option value="Paris">Paris</option>
+                    <option value="Tokyo">Tokyo</option>
+                </select>
             </div>
 
             <div class="form-group">
-                <label for="role">Role / Position *</label>
-                <input type="text" id="role" name="role" required>
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
             </div>
 
             <div class="form-group">
-                <label for="organisation">Organisation *</label>
-                <input type="text" id="organisation" name="organisation" required>
+                <label for="phone">Phone / WhatsApp *</label>
+                <input type="text" id="phone" name="phone_whatsapp" required>
             </div>
 
             <div class="form-group">
-                <label for="capital-capacity">Capital Capacity *</label>
-                <select id="capital-capacity" name="capital-capacity" required>
+                <label for="preferred-language">Preferred Contact Language *</label>
+                <input type="text" id="preferred-language" name="preferred_contact_language" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nature-of-inquiry">Nature of Inquiry *</label>
+                <select id="nature-of-inquiry" name="nature_of_inquiry" required>
                     <option value="">Select an option</option>
-                    <option value="below-threshold">Below USD 18M</option>
-                    <option value="threshold-ready">USD 18M threshold available</option>
-                    <option value="above-threshold">Above USD 18M</option>
-                    <option value="undisclosed">Prefer to disclose during review</option>
+                    <option value="Class S territorial concession">Class S territorial concession</option>
+                    <option value="Family office inquiry">Family office inquiry</option>
+                    <option value="Investment group inquiry">Investment group inquiry</option>
+                    <option value="Strategic institutional contact related to Class S concession">
+                        Strategic institutional contact related to Class S concession
+                    </option>
+                    <option value="Other Class S-related institutional inquiry">
+                        Other Class S-related institutional inquiry
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="estimated-capacity">Estimated Concession Capacity *</label>
+                <select id="estimated-capacity" name="estimated_concession_capacity" required>
+                    <option value="">Select an option</option>
+                    <option value="Below USD 18M">Below USD 18M</option>
+                    <option value="USD 18M - USD 25M">USD 18M - USD 25M</option>
+                    <option value="USD 25M - USD 40M">USD 25M - USD 40M</option>
+                    <option value="Above USD 40M">Above USD 40M</option>
+                    <option value="Prefer not to disclose at this stage">Prefer not to disclose at this stage</option>
                 </select>
             </div>
 
             <div class="form-group full-width">
-                <label for="institutional-fit">Institutional Fit *</label>
-                <textarea id="institutional-fit" name="institutional-fit" rows="8" required></textarea>
+                <label for="institutional-background">Institutional Background *</label>
+                <textarea id="institutional-background" name="institutional_background" rows="7" required></textarea>
             </div>
 
             <div class="form-group full-width">
-                <label for="message">Additional Message - Optional</label>
-                <textarea id="message" name="message" rows="8"></textarea>
+                <label for="reason-for-interest">Reason for Interest in The House of Sofia® *</label>
+                <textarea id="reason-for-interest" name="reason_for_interest" rows="7" required></textarea>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="territorial-interest">
+                    Briefly describe your institutional interest in one of the Class S territories. *
+                </label>
+                <textarea id="territorial-interest" name="territorial_interest_description" rows="7" required></textarea>
+            </div>
+
+            <div class="form-group full-width checkbox-group">
+                <label>
+                    <input type="checkbox" name="confirmation_no_approval" required>
+                    I understand that this submission does not constitute approval, negotiation, reservation, access right or concession authorization.
+                </label>
+
+                <label>
+                    <input type="checkbox" name="confirmation_not_franchise" required>
+                    I understand that The House of Sofia® is not a franchise and does not authorize local adaptation, sublicensing, teaching or methodological derivation.
+                </label>
+
+                <label>
+                    <input type="checkbox" name="confirmation_internal_triage" required>
+                    I understand that all communications are subject to internal triage and that no direct access to the founder is granted through this form.
+                </label>
+
+                <label>
+                    <input type="checkbox" name="confirmation_class_s_only" required>
+                    I understand that this concession access window is limited to Class S territories only: New York, London, Paris and Tokyo.
+                </label>
+
+                <label>
+                    <input type="checkbox" name="confirmation_window_closure" required>
+                    I understand that the current access window closes on October 18, 2026, and that submission before this date does not guarantee review, approval, reservation or continuation of negotiation.
+                </label>
+
+                <label>
+                    <input type="checkbox" name="confirmation_threshold" required>
+                    I understand that the first concession threshold begins at USD 18M and that estimated concession capacity is one of the initial criteria for institutional review.
+                </label>
             </div>
 
             <p class="form-notice full-width">
@@ -106,17 +189,14 @@
                 <a href="privacy.html">Privacy Policy</a>.
             </p>
 
-            <p class="form-notice full-width">
-                Submission does not constitute approval, reservation, negotiation, commitment or authorisation to operate
-                The House of Sofia® or use Sofia Method®.
-            </p>
-
             <button type="submit" class="hero-button">
-                Submit Class S Inquiry
+                Submit Class S Institutional Inquiry
             </button>
 
             <p class="form-feedback" id="access-form-feedback">
-                Your Class S inquiry has been received for internal qualification review.
+                Your Class S institutional inquiry has been received.
+                This submission does not constitute approval, access, reservation, negotiation or authorization.
+                The institutional channel will review the information provided and respond only when appropriate.
             </p>
 
         </form>

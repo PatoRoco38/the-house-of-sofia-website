@@ -715,3 +715,36 @@ html {
     display: block;
     margin-bottom: 40px;
 }
+.form-intro {
+    max-width: 820px;
+    color: var(--amber);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.checkbox-group {
+    gap: 18px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    font-size: 0.95rem;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+.checkbox-group input {
+    width: auto;
+    margin-top: 6px;
+}
+
+.spam-protection {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+}

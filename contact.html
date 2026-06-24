@@ -51,52 +51,78 @@
 
         <section class="contact-form-section">
 
-            <form class="contact-form" id="institutional-contact-form" action="https://formspree.io/f/xykqklaz" method="POST">
+            <form
+                class="contact-form"
+                id="institutional-contact-form"
+                action="https://formspree.io/f/xykqklaz"
+                method="POST">
 
-                <div class="form-group">
-                    <label for="full-name">Full Name</label>
-                    <input type="text" id="full-name" name="full-name" required>
+                <input type="hidden" name="_subject" value="Institutional Contact">
+                <input type="text" name="_gotcha" class="spam-protection" tabindex="-1" autocomplete="off">
+
+                <div class="form-group full-width">
+                    <p class="form-intro">
+                        This channel is reserved for institutional communication only.
+                        The House of Sofia® does not receive client appointments, treatment requests or direct access requests through this website.
+                        All communications are subject to internal triage.
+                    </p>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="contact-full-name">Full Name *</label>
+                    <input type="text" id="contact-full-name" name="full_name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">WhatsApp / Phone</label>
-                    <input type="text" id="phone" name="phone">
+                    <label for="contact-institution">Institution / Company *</label>
+                    <input type="text" id="contact-institution" name="institution_company" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="country">Country</label>
-                    <input type="text" id="country" name="country" required>
+                    <label for="contact-role">Role *</label>
+                    <input type="text" id="contact-role" name="role" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="inquiry-type">Inquiry Type</label>
-                    <select id="inquiry-type" name="inquiry-type" required>
+                    <label for="contact-email">Email *</label>
+                    <input type="email" id="contact-email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-country">Country *</label>
+                    <input type="text" id="contact-country" name="country" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nature-of-contact">Nature of Contact *</label>
+                    <select id="nature-of-contact" name="nature_of_contact" required>
                         <option value="">Select an option</option>
-                        <option value="institutional">Institutional Contact</option>
-                        <option value="concession">Concession Inquiry</option>
-                        <option value="class-s">Class S Access</option>
-                        <option value="partnership">Partnership</option>
-                        <option value="media">Media</option>
-                        <option value="other">Other</option>
+                        <option value="Institutional request">Institutional request</option>
+                        <option value="Press">Press</option>
+                        <option value="Legal">Legal</option>
+                        <option value="Partnership">Partnership</option>
+                        <option value="General inquiry">General inquiry</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
 
                 <div class="form-group full-width">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="8" required></textarea>
+                    <label for="contact-message">Message *</label>
+                    <textarea id="contact-message" name="message" rows="8" required></textarea>
                 </div>
 
+                <p class="form-notice full-width">
+                    By submitting this form, you acknowledge that your information will be processed in accordance with the
+                    <a href="privacy.html">Privacy Policy</a>.
+                </p>
+
                 <button type="submit" class="hero-button">
-                    Submit Inquiry
+                    Send Institutional Message
                 </button>
 
-                <p class="form-feedback" id="form-feedback">
-                    Your institutional inquiry has been received for internal review.
+                <p class="form-feedback" id="contact-form-feedback">
+                    Your message has been received by the institutional channel.
+                    If the request is considered relevant, the appropriate representative may respond.
                 </p>
 
             </form>

@@ -12,6 +12,7 @@ const sofiaAudio = {
 sofiaAudio.siteLoop.loop = true;
 
 let audioStarted = false;
+let activeTemporaryAudio = null;
 let currentVolume = 0.25;
 
 function startSofiaAudio() {
@@ -49,6 +50,10 @@ function setAllVolumes(value) {
     sofiaAudio.livingAesthetics.volume = value;
     sofiaAudio.pulse.volume = Math.min(value + 0.15, 1);
     sofiaAudio.concessionSeal.volume = value;
+
+    if (activeTemporaryAudio) {
+        activeTemporaryAudio.volume = value;
+    }
 }
 
 if (audioVolume) {
@@ -64,6 +69,13 @@ if (audioToggle) {
         Object.values(sofiaAudio).forEach((audio) => {
             audio.muted = audioMuted;
         });
+
+        if (activeTemporaryAudio && audioMuted) {
+            activeTemporaryAudio.pause();
+            activeTemporaryAudio.currentTime = 0;
+            activeTemporaryAudio = null;
+
+}
 
         audioToggle.textContent = audioMuted ? 'Audio Off' : 'Audio On';
     });
@@ -84,23 +96,41 @@ document.addEventListener('click', (event) => {
 
     if (!clickedButton) return;
 
-    console.log('Clique em botão institucional detectado');
+    const isFormSubmitButton =
+        clickedButton.matches('button[type="submit"]') ||
+        clickedButton.closest('form');
+
+    if (isFormSubmitButton) return;
+
+    console.log('Sofia Pulse acionado');
 
     if (audioStarted && !audioMuted) {
         playSofiaPulse();
-            }
+    }
 });
 function playSofiaConcessionSeal() {
+    if (activeTemporaryAudio) {
+        activeTemporaryAudio.pause();
+        activeTemporaryAudio.currentTime = 0;
+    }
+
     sofiaAudio.siteLoop.pause();
 
     const seal = new Audio("assets/audio/06_SOFIA_CONCESSION_SEAL.wav");
 
+    activeTemporaryAudio = seal;
+
     seal.volume = currentVolume;
     seal.muted = audioMuted;
 
-    seal.play();
+    seal.play()
+        .catch((error) => {
+            console.error("Erro ao tocar Sofia Concession Seal:", error);
+        });
 
     seal.addEventListener("ended", () => {
+        activeTemporaryAudio = null;
+
         if (audioStarted && !audioMuted) {
             sofiaAudio.siteLoop.play();
         }
