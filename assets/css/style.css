@@ -39,10 +39,15 @@ header {
 }
 
 .brand {
-    color: var(--amber);
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    font-size: 1.3rem;
-    font-weight: bold;
+}
+
+.brand img {
+    height: 36px;
+    width: auto;
+    display: block;
 }
 
 .main-nav {
@@ -51,15 +56,16 @@ header {
 }
 
 .main-nav a {
-    color: var(--amber);
+    color: var(--gold);
     text-decoration: none;
     font-size: 0.95rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    transition: color .25s ease;
 }
 
 .main-nav a:hover {
-    color: var(--gold);
+    color: var(--olive);
 }
 }
 
@@ -274,9 +280,11 @@ footer {
     color: var(--warm-white);
 }
 
-.footer-brand {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
+.footer-brand img {
+    height: 52px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .footer-motto {
@@ -700,4 +708,10 @@ html {
 
 .form-notice a:hover {
     text-decoration: underline;
+}
+.hero-lockup {
+    width: min(500px, 90%);
+    height: auto;
+    display: block;
+    margin-bottom: 40px;
 }
