@@ -334,7 +334,7 @@ footer {
 }
 
 .menu-toggle {
-    display: block;
+    display: none;
 
     background: transparent;
     border: 1px solid rgba(138, 111, 85, 0.35);
@@ -364,6 +364,10 @@ footer {
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 
     .main-nav {
@@ -682,4 +686,18 @@ html {
     .contact-form {
         grid-template-columns: 1fr;
     }
+}
+.form-notice {
+    color: var(--amber);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.form-notice a {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+.form-notice a:hover {
+    text-decoration: underline;
 }

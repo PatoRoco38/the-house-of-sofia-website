@@ -18,21 +18,54 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
 document.addEventListener("DOMContentLoaded", () => {
-    const contactForm = document.getElementById("institutional-contact-form");
-    const formFeedback = document.getElementById("form-feedback");
+    const forms = document.querySelectorAll("form.contact-form");
 
-    if (!contactForm || !formFeedback) return;
+    forms.forEach((form) => {
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
 
-    contactForm.addEventListener("submit", (event) => {
-        event.preventDefault();
+            const submitButton = form.querySelector('button[type="submit"]');
+            const feedback = form.querySelector(".form-feedback");
 
-        formFeedback.classList.add("is-visible");
+            if (!submitButton || !feedback) return;
 
-        contactForm.reset();
+            const originalButtonText = submitButton.textContent;
 
-        if (typeof playSofiaConcessionSeal === "function") {
-            playSofiaConcessionSeal();
-        }
+            submitButton.disabled = true;
+            submitButton.textContent = "Submitting...";
+            feedback.classList.remove("is-visible");
+            feedback.textContent = "";
+
+            try {
+                const response = await fetch(form.action, {
+                    method: "POST",
+                    body: new FormData(form),
+                    headers: {
+                        "Accept": "application/json"
+                    }
+                });
+
+                if (response.ok) {
+                    form.reset();
+                    feedback.textContent = "Your inquiry has been received for institutional review.";
+                    feedback.classList.add("is-visible");
+
+                    if (typeof playSofiaConcessionSeal === "function") {
+                        playSofiaConcessionSeal();
+                    }
+                } else {
+                    feedback.textContent = "Submission could not be completed. Please review the information and try again.";
+                    feedback.classList.add("is-visible");
+                }
+            } catch (error) {
+                feedback.textContent = "A connection error occurred. Please try again in a few moments.";
+                feedback.classList.add("is-visible");
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+            }
+        });
     });
 });
