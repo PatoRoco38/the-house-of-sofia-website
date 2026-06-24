@@ -39,28 +39,25 @@ document.addEventListener("DOMContentLoaded", () => {
             feedback.textContent = "";
 
             try {
-                const response = await fetch(form.action, {
+                await fetch(form.action, {
                     method: "POST",
                     body: new FormData(form),
-                    headers: {
-                        "Accept": "application/json"
-                    }
+                    mode: "no-cors"
                 });
 
-                if (response.ok) {
-                    form.reset();
-                    feedback.textContent = "Your inquiry has been received for institutional review.";
-                    feedback.classList.add("is-visible");
+                form.reset();
+                feedback.textContent = "Your inquiry has been received for institutional review.";
+                feedback.classList.add("is-visible");
 
-                    if (typeof playSofiaConcessionSeal === "function") {
-                        playSofiaConcessionSeal();
-                    }
-                } else {
-                    feedback.textContent = "Submission could not be completed. Please review the information and try again.";
-                    feedback.classList.add("is-visible");
+                if (typeof playSofiaConcessionSeal === "function") {
+                    playSofiaConcessionSeal();
                 }
+
             } catch (error) {
-                feedback.textContent = "A connection error occurred. Please try again in a few moments.";
+                console.error(error);
+
+                feedback.textContent = error.message;
+
                 feedback.classList.add("is-visible");
             } finally {
                 submitButton.disabled = false;

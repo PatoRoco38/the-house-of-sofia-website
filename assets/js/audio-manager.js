@@ -12,6 +12,7 @@ const sofiaAudio = {
 sofiaAudio.siteLoop.loop = true;
 
 let audioStarted = false;
+let currentVolume = 0.25;
 
 function startSofiaAudio() {
 
@@ -40,6 +41,8 @@ const audioVolume = document.getElementById('audio-volume');
 let audioMuted = false;
 
 function setAllVolumes(value) {
+    currentVolume = value;
+
     sofiaAudio.siteLoop.volume = value;
     sofiaAudio.threshold.volume = value;
     sofiaAudio.institutionalBed.volume = value;
