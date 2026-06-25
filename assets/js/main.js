@@ -147,7 +147,7 @@ function setupClassSAccessWindow() {
                 No new institutional concession inquiries are being received through the official website at this time.
             </p>
             <p>
-                The House of Sofia® remains under protected governance.
+                The House of Sofia remains under protected governance.
             </p>
             <a href="contact.html" class="hero-button">
                 Institutional Contact

@@ -1,8 +1,8 @@
-# The House of Sofia® Website
+# The House of Sofia Website
 
-Official institutional website for **The House of Sofia®**.
+Official institutional website for **The House of Sofia**.
 
-This project presents the institutional identity, method positioning, governance structure and official communication channels of The House of Sofia®.
+This project presents the institutional identity, method positioning, governance structure and official communication channels of The House of Sofia.
 
 ## Overview
 
@@ -12,7 +12,7 @@ Its purpose is not to operate as a public booking system, sales page or treatmen
 It serves as an official institutional entry point for presenting:
 
 - The House concept
-- Sofia Method®
+- Sofia Method
 - Governance principles
 - Concession model
 - Institutional access
@@ -108,4 +108,4 @@ Final client review
 Advanced audio events
 Author
 
-Developed by Renato Moura as part of the technical foundation for The House of Sofia® digital ecosystem.
+Developed by Renato Moura as part of the technical foundation for The House of Sofia digital ecosystem.
