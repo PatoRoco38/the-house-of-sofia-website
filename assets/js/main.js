@@ -19,50 +19,151 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const forms = document.querySelectorAll("form.contact-form");
+document.querySelectorAll(".contact-form").forEach((form) => {
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
 
-    forms.forEach((form) => {
-        form.addEventListener("submit", async (event) => {
-            event.preventDefault();
+        const feedback = form.querySelector(".form-feedback");
+        const submitButton = form.querySelector("button[type='submit']");
+        const originalButtonText = submitButton ? submitButton.textContent : "";
 
-            const submitButton = form.querySelector('button[type="submit"]');
-            const feedback = form.querySelector(".form-feedback");
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
 
-            if (!submitButton || !feedback) return;
-
-            const originalButtonText = submitButton.textContent;
-
+        if (submitButton) {
             submitButton.disabled = true;
             submitButton.textContent = "Submitting...";
-            feedback.classList.remove("is-visible");
-            feedback.textContent = "";
+        }
 
-            try {
-                await fetch(form.action, {
-                    method: "POST",
-                    body: new FormData(form),
-                    mode: "no-cors"
-                });
+        if (feedback) {
+            feedback.classList.remove("is-visible", "is-error");
+        }
 
-                form.reset();
-                feedback.textContent = "Your inquiry has been received for institutional review.";
-                feedback.classList.add("is-visible");
-
-                if (typeof playSofiaConcessionSeal === "function") {
-                    playSofiaConcessionSeal();
+        try {
+            const response = await fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: {
+                    "Accept": "application/json"
                 }
+            });
 
-            } catch (error) {
-                console.error(error);
+            if (!response.ok) {
+                throw new Error("Form submission failed.");
+            }
 
-                feedback.textContent = error.message;
+            form.reset();
 
+            if (feedback) {
                 feedback.classList.add("is-visible");
-            } finally {
+            }
+
+            if (
+                form.id === "class-s-access-form" &&
+                typeof playSofiaConcessionSeal === "function"
+            ) {
+                playSofiaConcessionSeal();
+            }
+
+        } catch (error) {
+            console.error("Erro ao enviar formulário:", error);
+
+            if (feedback) {
+                feedback.textContent = "Your message could not be submitted. Please verify the required fields and try again.";
+                feedback.classList.add("is-visible", "is-error");
+            }
+
+        } finally {
+            if (submitButton) {
                 submitButton.disabled = false;
                 submitButton.textContent = originalButtonText;
             }
-        });
+        }
     });
 });
+
+function setupClassSAccessWindow() {
+    const accessForm = document.getElementById("class-s-access-form");
+
+    if (!accessForm) return;
+
+    const openAt = new Date("2026-06-25T14:00:00-03:00");
+    const closeAt = new Date("2026-10-18T07:20:00-03:00");
+    const now = new Date();
+
+    const setFormEnabled = (enabled) => {
+        accessForm.classList.toggle("form-is-hidden", !enabled);
+        accessForm.hidden = !enabled;
+        accessForm.setAttribute("aria-hidden", String(!enabled));
+
+        accessForm
+            .querySelectorAll("input, select, textarea, button")
+            .forEach((field) => {
+                field.disabled = !enabled;
+            });
+    };
+
+    const showAccessMessage = (html) => {
+        const existingMessage = document.querySelector(".access-window-message");
+
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+
+        const statusMessage = document.createElement("div");
+        statusMessage.className = "access-window-message";
+        statusMessage.setAttribute("role", "status");
+        statusMessage.setAttribute("aria-live", "polite");
+        statusMessage.innerHTML = html;
+
+        accessForm.parentNode.insertBefore(statusMessage, accessForm);
+    };
+
+    if (now < openAt) {
+        setFormEnabled(false);
+
+        showAccessMessage(`
+            <p>
+                The Class S concession access window will open on June 25, 2026.
+            </p>
+            <p>
+                No institutional concession inquiries are being received through the official website at this time.
+            </p>
+        `);
+
+        return;
+    }
+
+    if (now >= closeAt) {
+        setFormEnabled(false);
+
+        showAccessMessage(`
+            <p>
+                The Class S concession access window is now closed.
+            </p>
+            <p>
+                No new institutional concession inquiries are being received through the official website at this time.
+            </p>
+            <p>
+                The House of Sofia® remains under protected governance.
+            </p>
+            <a href="contact.html" class="hero-button">
+                Institutional Contact
+            </a>
+        `);
+
+        return;
+    }
+
+    setFormEnabled(true);
+
+    const existingMessage = document.querySelector(".access-window-message");
+
+    if (existingMessage) {
+        existingMessage.remove();
+    }
+}
+
+setupClassSAccessWindow();
