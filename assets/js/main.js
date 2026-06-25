@@ -126,7 +126,7 @@ function setupClassSAccessWindow() {
 
         showAccessMessage(`
             <p>
-                The Class S concession access window will open on June 25, 2026.
+                The Class S concession access window will open on June 25, 2026 at 14:00 Brasília time.
             </p>
             <p>
                 No institutional concession inquiries are being received through the official website at this time.

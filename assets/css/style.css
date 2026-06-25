@@ -950,3 +950,39 @@ body {
         transform: scale(0.85);
     }
 }
+
+/* Final audio control positioning - no content overlap */
+
+body {
+    padding-bottom: 0;
+}
+
+.audio-control {
+    position: static !important;
+    width: fit-content;
+    max-width: calc(100% - 40px);
+    margin: 40px auto 0;
+    z-index: 1;
+    transform: none !important;
+}
+
+@media (max-width: 900px) {
+    body {
+        padding-bottom: 0;
+    }
+
+    .audio-control {
+        position: static !important;
+        width: calc(100% - 56px);
+        max-width: 360px;
+        margin: 32px auto 0;
+        transform: none !important;
+    }
+}
+
+@media (max-width: 520px) {
+    .audio-control {
+        width: calc(100% - 40px);
+        margin: 28px auto 0;
+    }
+}
