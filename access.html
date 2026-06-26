@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
     <title>Class S Access | The House of Sofia</title>
     <meta name="description" content="Class S Access qualification flow for The House of Sofia.">
     <link rel="icon" href="assets/img/brand/HouseOfSofia_Favicon_Master_Public.png" type="image/png">
@@ -56,8 +57,9 @@
                 <p class="form-intro">
                     This form is intended exclusively for Class S territorial concession inquiries for The House of Sofia.
                     The current concession access window is open only for New York, London, Paris and Tokyo.
-                    The access window opens on June 25, 2026 and closes on October 18, 2026.
-                    The first concession threshold begins at USD 18M.
+                    The access window opens on June 25, 2026 at 14:00 Brasília time.
+                    The current Class S concession access window closes on 18 October 2026 at 07:20 Brasília time (10:20 UTC).
+                    The first concession will not be below USD 18 million.
                 </p>
             </div>
 
@@ -123,11 +125,10 @@
                 </select>
             </div>
 
-            <div class="form-group">
-                <label for="estimated-capacity">Estimated Concession Capacity *</label>
+            <div class="form-group full-width">
+                <label for="estimated-capacity">Estimated capital capacity for the first concession *</label>
                 <select id="estimated-capacity" name="estimated_concession_capacity" required>
                     <option value="">Select an option</option>
-                    <option value="Below USD 18M">Below USD 18M</option>
                     <option value="USD 18M - USD 25M">USD 18M - USD 25M</option>
                     <option value="USD 25M - USD 40M">USD 25M - USD 40M</option>
                     <option value="Above USD 40M">Above USD 40M</option>
@@ -155,7 +156,7 @@
             <div class="form-group full-width checkbox-group">
                 <label>
                     <input type="checkbox" name="confirmation_no_approval" required>
-                    I understand that this submission does not constitute approval, negotiation, reservation, access right or concession authorization.
+                    I understand that this submission does not constitute approval, negotiation, reservation, access right or concession authorisation.
                 </label>
 
                 <label>
@@ -175,12 +176,13 @@
 
                 <label>
                     <input type="checkbox" name="confirmation_window_closure" required>
-                    I understand that the current access window closes on October 18, 2026, and that submission before this date does not guarantee review, approval, reservation or continuation of negotiation.
+                    I understand that the current Class S concession access window closes on 18 October 2026 at 07:20 Brasília time (10:20 UTC). And that submission before this date does not guarantee review, approval, reservation or continuation of negotiation.
                 </label>
 
                 <label>
                     <input type="checkbox" name="confirmation_threshold" required>
-                    I understand that the first concession threshold begins at USD 18M and that estimated concession capacity is one of the initial criteria for institutional review.
+                    I acknowledge that the first concession will not be below USD 18 million.
+                    Meeting or exceeding the financial threshold does not confer eligibility, territorial priority, reservation or approval.
                 </label>
             </div>
 
@@ -195,7 +197,7 @@
 
             <p class="form-feedback" id="access-form-feedback">
                 Your Class S institutional inquiry has been received.
-                This submission does not constitute approval, access, reservation, negotiation or authorization.
+                This submission does not constitute approval, access, reservation, negotiation or authorisation.
                 The institutional channel will review the information provided and respond only when appropriate.
             </p>
 
@@ -243,11 +245,11 @@
                 <p>
                     All rights reserved. No part of this website authorizes reproduction, adaptation, teaching,
                     sublicensing, local derivation, methodological use or institutional representation without prior
-                    express written authorization.
+                    express written authorisation.
                 </p>
 
                 <p>
-                    The House of Sofia is not a clinic, spa, franchise, wellness center or treatment menu.
+                    The House of Sofia is not a clinic, spa, franchise, wellness centre or treatment menu.
                     It operates through governed concession and protected method.
                 </p>
             </div>
@@ -260,15 +262,12 @@
 </footer>
 
 <div class="audio-control">
-    <button id="audio-toggle" type="button">Audio On</button>
+    <button id="audio-toggle" type="button">Audio Off</button>
     <input id="audio-volume" type="range" min="0" max="1" step="0.05" value="0.25">
 </div>
 
 <script src="assets/js/main.js"></script>
 <script src="assets/js/audio-manager.js"></script>
-<script>
-    document.addEventListener('click', startSofiaAudio, { once: true });
-</script>
 
 </body>
 </html>
