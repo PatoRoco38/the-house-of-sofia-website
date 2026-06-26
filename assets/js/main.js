@@ -126,10 +126,10 @@ function setupClassSAccessWindow() {
 
         showAccessMessage(`
             <p>
-                The Class S concession access window will open on June 25, 2026 at 14:00 Brasília time.
+                The Class S concession access window will open on 25 June 2026 at 14:00 Brasília time.
             </p>
             <p>
-                No institutional concession inquiries are being received through the official website at this time.
+                No institutional concession enquiries are being received through the official website at this time.
             </p>
         `);
 
@@ -144,7 +144,7 @@ function setupClassSAccessWindow() {
                 The Class S concession access window is now closed.
             </p>
             <p>
-                No new institutional concession inquiries are being received through the official website at this time.
+                No new institutional concession enquiries are being received through the official website at this time.
             </p>
             <p>
                 The House of Sofia remains under protected governance.

@@ -1003,3 +1003,41 @@ body {
 .contact-form button[type="submit"] {
     grid-column: 1 / -1;
 }
+
+/* Landscape header correction */
+
+@media (orientation: landscape) and (max-height: 560px) {
+    .site-header {
+        background: var(--warm-white) !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        border-bottom: 1px solid rgba(199, 164, 106, 0.25);
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .brand img {
+        height: 36px;
+    }
+
+    .main-nav {
+        background: var(--warm-white) !important;
+    }
+
+    .main-nav.is-open {
+        background: var(--warm-white) !important;
+    }
+}
+
+/* Prevent visited menu links from changing colour */
+
+.main-nav a,
+.main-nav a:visited,
+.main-nav a:focus,
+.main-nav a:active {
+    color: var(--gold);
+}
+
+.main-nav a:hover {
+    color: var(--gold);
+}
