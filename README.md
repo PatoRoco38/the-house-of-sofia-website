@@ -35,7 +35,7 @@ It serves as an official institutional entry point for presenting:
 - Institutional audio system
 - Audio volume control
 - Sofia Pulse interaction sound
-- Privacy Policy page
+- Privacy Notice page
 - Terms of Use page
 - Custom 404 page
 - SEO metadata
